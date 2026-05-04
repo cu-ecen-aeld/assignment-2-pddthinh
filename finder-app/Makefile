@@ -1,3 +1,6 @@
+CROSS_COMPILE ?= 
+
+
 SRC_DIR := .
 BUILD_DIR := build
 
@@ -9,6 +12,10 @@ SRCS := $(wildcard $(SRC_DIR)/*.c)
 OBJS := $(SRCS:$(SRC_DIR)/%.c=$(BUILD_DIR)/%.o)
 
 CFLAGS :=
+
+CC := $(CROSS_COMPILE)gcc
+LD := $(CROSS_COMPILE)ld
+AR := $(CROSS_COMPILE)ar
 
 all: $(TARGET)
 
